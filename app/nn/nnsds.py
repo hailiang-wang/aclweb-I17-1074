@@ -379,6 +379,7 @@ class NNSDS(BaseNNModule):
                     loss_t, companion_loss_t, prior_loss_t, posterior_loss_t, base_loss_t,\
                     reward_t, baseline_t, debug_t
 
+
         # initial belief state
         belief_0 = T.zeros((self.iseg[-1]),dtype=theano.config.floatX)
         belief_0 = T.set_subtensor(belief_0[[x-1 for x in self.iseg[1:]]],1.0)
@@ -515,7 +516,7 @@ class NNSDS(BaseNNModule):
                 outputs=[prior_loss,sample, debug],\
                 updates=updates,\
                 on_unused_input='warn')
-            
+
     # function for testing
     def read(self, masked_source_t):
         ##############################################################

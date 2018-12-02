@@ -491,8 +491,7 @@ class NNDial(object):
 
     def trainNet(self): 
 
-        if self.debug:
-            print 'start network training ...'
+        print 'start network training ...'
        
         ######## training with early stopping ######### 
         epoch = 0
